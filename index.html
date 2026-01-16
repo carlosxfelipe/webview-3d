@@ -43,6 +43,40 @@
       .hidden {
         opacity: 0;
       }
+
+      /* GitHub Badge Styles */
+      #github-badge {
+        position: fixed;
+        bottom: 16px;
+        right: 16px;
+        z-index: 1000;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-family: sans-serif;
+      }
+      .github-link {
+        text-decoration: none;
+        color: #24292f;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-weight: bold;
+        transition: opacity 0.3s;
+      }
+      .github-link:hover {
+        opacity: 0.7;
+      }
+      
+      @media (prefers-color-scheme: dark) {
+        #loading {
+          background: #181818;
+          color: #eee;
+        }
+        .github-link {
+          color: #eee;
+        }
+      }
     </style>
     <!-- Import Maps for cleaner module imports -->
     <script type="importmap">
@@ -274,5 +308,11 @@
 
       render(h(App), document.getElementById("app"));
     </script>
+    <div id="github-badge">
+      <a href="https://github.com/carlosxfelipe/webview-3d" target="_blank" class="github-link">
+        <svg height="24" width="24" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" style="vertical-align: middle;"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.6-.18-3.29-.8-3.29-3.55 0-.78.28-1.42.74-1.92-.07-.18-.32-.91.07-1.9 0 0 .6-.19 1.97.73.57-.16 1.18-.24 1.79-.24.61 0 1.22.08 1.79.24 1.37-.92 1.97-.73 1.97-.73.39.99.14 1.72.07 1.9.46.5.74 1.14.74 1.92 0 2.76-1.69 3.37-3.3 3.55.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.19 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path></svg>
+        <span>@carlosxfelipe</span>
+      </a>
+    </div>
   </body>
 </html>
