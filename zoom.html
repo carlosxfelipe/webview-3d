@@ -97,8 +97,8 @@
       import { h, render } from "preact";
       import { useEffect, useRef, useState } from "preact/hooks";
       import * as THREE from "three";
-      import MTLLoader from "./MTLLoader.js";
-      import OBJLoader from "./OBJLoader.js";
+      import MTLLoader from "./three/MTLLoader.js";
+      import OBJLoader from "./three/OBJLoader.js";
       import { OrbitControls } from "three/addons/controls/OrbitControls.js";
 
       function App() {
@@ -160,7 +160,7 @@
           const mtlLoader = new MTLLoader(manager);
 
           mtlLoader.load(
-            "./can_mat.mtl",
+            "./can/can_mat.mtl",
             (materials) => {
               materials.preload();
 
@@ -168,11 +168,11 @@
               objLoader.setMaterials(materials);
 
               objLoader.load(
-                "./can.obj",
+                "./can/can.obj",
                 (object) => {
                   // Texture Logic
                   const textureLoader = new THREE.TextureLoader(manager);
-                  const texture = textureLoader.load("./can_top.jpg");
+                  const texture = textureLoader.load("./can/can_top.jpg");
 
                   object.traverse((child) => {
                     if (child.isMesh) {
